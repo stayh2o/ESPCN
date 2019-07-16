@@ -2,7 +2,7 @@ import tensorflow as tf
 from model import ESPCN
 flags = tf.compat.v1.app.flags
 FLAGS = flags.FLAGS
-flags.DEFINE_integer("epoch", 200, "Number of epoch")
+flags.DEFINE_integer("epoch", 15000, "Number of epoch")
 flags.DEFINE_integer("image_size", 17, "The size of image input")
 flags.DEFINE_integer("c_dim", 3, "The size of channel")
 flags.DEFINE_boolean("is_train", False, "if the train")

@@ -52,9 +52,9 @@ class ESPCN(object):
             data = load_data(self.is_train, self.test_img)
             input_ = imread(data[0])
             self.h, self.w, c = input_.shape
-            self.images = tf.placeholder(
+            self.images = tf.compat.v1.placeholder(
                 tf.float32, [None, self.h, self.w, self.c_dim], name='images')
-            self.labels = tf.placeholder(tf.float32, [
+            self.labels = tf.compat.v1.placeholder(tf.float32, [
                                          None, self.h * self.scale, self.w * self.scale, self.c_dim], name='labels')
 
         self.weights = {
@@ -137,7 +137,7 @@ class ESPCN(object):
         x = np.squeeze(result)
         checkimage(x)
         print(x.shape)
-        imsave(x, 'result/result.png', config)
+        imsave(x, 'result/result2.png', config)
 
     def train(self, config):
 
